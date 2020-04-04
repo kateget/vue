@@ -1,0 +1,45 @@
+$(function () {
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+        $("body").css("width" , "1280px");
+    }
+
+    // $(".float_qq1").click(function (e) {
+    //     e.preventDefault();
+    //     var i = $(window).scrollTop() ;
+    //     var t = setInterval(function () {
+    //         i-= 60;
+    //         if(i<= 0){
+    //             clearInterval(t);
+    //             $(window).scrollTop(0);
+    //         }else {
+    //             $(window).scrollTop(i);
+    //         }
+    //
+    //     },24)
+    // });
+
+
+    function topTimer() {
+        var timer = new Date() ;
+        var year = timer.getFullYear() ;
+        var month = timer.getMonth()+1 ;
+        var date = timer.getDate() ;
+        var week ;
+
+        switch(timer.getDay())
+        {
+            case 0:week = "星期日"; break;
+            case 1:week = "星期一"; break;
+            case 2:week = "星期二"; break;
+            case 3:week = "星期三"; break;
+            case 4:week = "星期四"; break;
+            case 5:week = "星期五"; break;
+            case 6:week = "星期六"; break;
+        }
+
+        $(".h-top-lf span").html(year +"年"+ month +"月"+ date +"日  " + week);
+    }
+
+    topTimer();
+
+})
